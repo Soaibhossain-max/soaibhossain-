@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Apps Script Integration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI MRO Prediction System</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #080c14;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Apps Script Data Handler</h1>
-    <button onclick="runScript()">Run Script</button>
-
-    <script>
-        function runScript() {
-            // আপনার কপি করা URL-টি এখানে বসান
-            const scriptURL = "https://script.google.com/a/macros/akijagrofeed.com/s/AKfycby3QTice-XPp1SslToWVunpV90fKv3NP2sVwMlh7MDCXNf-Y0F_fqBigmjOgiVj1lH0Xg/exec";
-
-            fetch(scriptURL)
-                .then(response => {
-                    alert("Script Triggered Successfully!");
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                });
-        }
-    </script>
+    
+    <iframe 
+        src="https://script.google.com/a/macros/akijagrofeed.com/s/AKfycby3QTice-XPp1SslToWVunpV90fKv3NP2sVwMlh7MDCXNf-Y0F_fqBigmjOgiVj1lH0Xg/exec"
+        allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-modals">
+    </iframe>
 </body>
 </html>

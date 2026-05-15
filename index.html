@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=0.3"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRML · MRO Prediction System</title>
     <style>
         body, html {
@@ -10,16 +10,30 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: auto; /* স্ক্রল করার সুবিধা দেবে */
+            overflow: hidden;
             background-color: #080c14;
         }
+
+        /* ল্যাপটপ বা বড় স্ক্রিনের জন্য (Full Screen) */
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1200px; /* একটি ফিক্সড ডেস্কটপ উইডথ সেট করা হলো */
-            height: 100%;
+            width: 100%;
+            height: 100vh;
             border: none;
+        }
+
+        
+        @media only screen and (max-width: 768px) {
+            body, html {
+                overflow: auto; 
+            }
+            iframe {
+                width: 1280px; 
+                height: 100vh;
+               
+                transform: scale(0.32); 
+                transform-origin: 0 0;
+                width: 312.5%; /* scale 0.32 হলে width (100 / 0.32) = 312.5% হতে হয় */
+            }
         }
     </style>
 </head>
